@@ -1,0 +1,96 @@
+﻿@model IEnumerable<ExoMVC.ViewModels.UtilisateurViewModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+@using ExoMVC.ViewModels;
+<h2>Index</h2>
+
+<p>
+    <i class="fas fa-plus-square btn btn-success"></i> @Html.ActionLink("Ajouter un utilisateur", "Create")
+</p>
+
+@*Afficher la vue partielle*@
+
+@if (TempData["Partial"] != null)
+{
+    @Html.Partial("_PartialCreate", new UtilisateurViewModel())
+
+}
+
+<br />
+<div class="container">
+    @using (Html.BeginForm("Index", "Utilisateur", FormMethod.Get))
+    {
+        <div class="col-sm-6">
+            <input type="text" name="search" placeholder="mot clé..." class="form-control" />
+        </div>
+        <div class="col-sm-6">
+            <input type="submit" value="Rechercher" class="btn btn-dark" />
+        </div>
+    }
+</div>
+<br />
+<div class="container">
+    <table class="table table-success table-striped">
+        <tr>
+            <th>
+                @Html.ActionLink("↑", "Index", new { sortBy = "asc", search = Request.QueryString["search"] })
+                @Html.DisplayNameFor(model => model.UserName)
+                @Html.ActionLink("↓", "Index", new { sortBy = "desc", search = Request.QueryString["search"] })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IsAdmin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Photo)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Password)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IsAdmin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    <img src="~/Content/images/@item.Photo" class="img-thumbnail" style="height:30px" />
+                </td>
+                <td>
+                    <i class="fas fa-edit btn btn-primary"></i> @Html.ActionLink("Edit", "Edit", new { id = item.Id })
+                    <i class="fas fa-question-circle btn btn-default"></i> @Html.ActionLink("Details", "Details", new { id = item.Id })
+                    <i class="fas fa-trash-alt btn btn-danger"></i> @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        <li class="page-item"><a class="page-link" href="/Utilisateur/Index?page=@ViewBag.PreviousPage">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">@ViewBag.Page</a></li>
+
+        <li class="page-item"><a class="page-link" href="/Utilisateur/Index?page=@ViewBag.NextPage">Next</a></li>
+    </ul>
+</nav>
+<div class="d-flex justify-content-end">
+    Page @ViewBag.Page sur @ViewBag.Totales
+</div>

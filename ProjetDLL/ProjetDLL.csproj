@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{80FED6E0-22D8-41CF-A5AE-E2E59DA0654B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ProjetDLL</RootNamespace>
+    <AssemblyName>ProjetDLL</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConceptsObjets\Classes\Screen.cs" />
+    <Compile Include="ConceptsObjets\Encapsulation\Rectangle.cs" />
+    <Compile Include="ConceptsObjets\Polymorphisme\Chaise.cs" />
+    <Compile Include="ConceptsObjets\Polymorphisme\IPliable.cs" />
+    <Compile Include="ConceptsObjets\Polymorphisme\PolyTest.cs" />
+    <Compile Include="ConceptsObjets\Polymorphisme\Table.cs" />
+    <Compile Include="ConceptsObjets\Quizzs\Question.cs" />
+    <Compile Include="ConceptsObjets\Quizzs\QuizRepository.cs" />
+    <Compile Include="ConceptsObjets\Quizzs\QuizTest.cs" />
+    <Compile Include="ConceptsObjets\Quizzs\Quizz.cs" />
+    <Compile Include="ConceptsObjets\Quizzs\Reponse.cs" />
+    <Compile Include="ConceptsObjets\Quizzs\Utilisateur.cs" />
+    <Compile Include="Delegates\Calcul.cs" />
+    <Compile Include="Demeter\Grade.cs" />
+    <Compile Include="Demeter\School.cs" />
+    <Compile Include="Demeter\Student.cs" />
+    <Compile Include="Demeter\StudentClasse.cs" />
+    <Compile Include="DesignPatterns\Comportement\ChainOfResponsability\ComplaintRequest.cs" />
+    <Compile Include="DesignPatterns\Comportement\ChainOfResponsability\Directeur.cs" />
+    <Compile Include="DesignPatterns\Comportement\ChainOfResponsability\ReponsablePedago.cs" />
+    <Compile Include="DesignPatterns\Comportement\ChainOfResponsability\StaffMember.cs" />
+    <Compile Include="DesignPatterns\Comportement\ChainOfResponsability\Teacher.cs" />
+    <Compile Include="DesignPatterns\Comportement\Memento\Editeur.cs" />
+    <Compile Include="DesignPatterns\Comportement\Memento\EditeurState.cs" />
+    <Compile Include="DesignPatterns\Comportement\Memento\History.cs" />
+    <Compile Include="DesignPatterns\Comportement\Observer\Customer.cs" />
+    <Compile Include="DesignPatterns\Comportement\Observer\IObserver.cs" />
+    <Compile Include="DesignPatterns\Comportement\Observer\ISujet.cs" />
+    <Compile Include="DesignPatterns\Comportement\Observer\ProductItem.cs" />
+    <Compile Include="DesignPatterns\Creation\Builder\BankAccount.cs" />
+    <Compile Include="DesignPatterns\Creation\Builder\BankAccountBuilder.cs" />
+    <Compile Include="DesignPatterns\Creation\Factory\Circle.cs" />
+    <Compile Include="DesignPatterns\Creation\Factory\IShape.cs" />
+    <Compile Include="DesignPatterns\Creation\Factory\Rectangle.cs" />
+    <Compile Include="DesignPatterns\Creation\Factory\ShapeFactory.cs" />
+    <Compile Include="DesignPatterns\Creation\Factory\Triangle.cs" />
+    <Compile Include="DesignPatterns\Creation\Prototype\Article.cs" />
+    <Compile Include="DesignPatterns\Creation\Prototype\LineArticle.cs" />
+    <Compile Include="DesignPatterns\Creation\Singleton\Directeurs.cs" />
+    <Compile Include="DesignPatterns\Structure\Adapter\Contact.cs" />
+    <Compile Include="DesignPatterns\Structure\Adapter\ContactRepository.cs" />
+    <Compile Include="DesignPatterns\Structure\Adapter\IContactRepository.cs" />
+    <Compile Include="DesignPatterns\Structure\Adapter\IJsonAdapter.cs" />
+    <Compile Include="DesignPatterns\Structure\Adapter\JsonAdapter.cs" />
+    <Compile Include="DesignPatterns\Structure\Proxy\IMessage.cs" />
+    <Compile Include="DesignPatterns\Structure\Proxy\MessageProxy.cs" />
+    <Compile Include="DesignPatterns\Structure\Proxy\UserMessage.cs" />
+    <Compile Include="Genericite\IRepository.cs" />
+    <Compile Include="Genericite\JsonTool.cs" />
+    <Compile Include="Genericite\MyClassGen2.cs" />
+    <Compile Include="Genericite\MyClassGeneric.cs" />
+    <Compile Include="Genericite\Product.cs" />
+    <Compile Include="Genericite\ProductRepository.cs" />
+    <Compile Include="MyTool.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reflexion\CsvTool.cs" />
+    <Compile Include="SOLID\DependencyInjection\Bad\User.cs" />
+    <Compile Include="SOLID\DependencyInjection\Bad\UserRepository.cs" />
+    <Compile Include="SOLID\DependencyInjection\Bad\UserService.cs" />
+    <Compile Include="SOLID\DependencyInjection\Good\IUserRepository.cs" />
+    <Compile Include="SOLID\DependencyInjection\Good\User.cs" />
+    <Compile Include="SOLID\DependencyInjection\Good\UserRepository.cs" />
+    <Compile Include="SOLID\DependencyInjection\Good\UserRepositoryFichier.cs" />
+    <Compile Include="SOLID\DependencyInjection\Good\UserService.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Bad\Employe.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Bad\IEmploye.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Bad\Persistence.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Bad\RH.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Good\Employe.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Good\IPersistence.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Good\IRh.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Good\Persistence.cs" />
+    <Compile Include="SOLID\InterfaceSegregation\Good\RH.cs" />
+    <Compile Include="SOLID\LiskovSubstitution\Bad\Vehicule.cs" />
+    <Compile Include="SOLID\LiskovSubstitution\Bad\Voiture.cs" />
+    <Compile Include="SOLID\LiskovSubstitution\Good\Vehicule.cs" />
+    <Compile Include="SOLID\LiskovSubstitution\Good\Voiture.cs" />
+    <Compile Include="SOLID\OpenClose\Bad\AreaCalculator.cs" />
+    <Compile Include="SOLID\OpenClose\Bad\Circle.cs" />
+    <Compile Include="SOLID\OpenClose\Bad\Rectangles.cs" />
+    <Compile Include="SOLID\OpenClose\Good\AreaCalculator.cs" />
+    <Compile Include="SOLID\OpenClose\Good\Circle.cs" />
+    <Compile Include="SOLID\OpenClose\Good\IShape.cs" />
+    <Compile Include="SOLID\OpenClose\Good\Rectangles.cs" />
+    <Compile Include="SOLID\OpenClose\Good\Triangle.cs" />
+    <Compile Include="SOLID\SingleOfResponsability\Bad\Contact.cs" />
+    <Compile Include="SOLID\SingleOfResponsability\Good\ConnexionBDD.cs" />
+    <Compile Include="SOLID\SingleOfResponsability\Good\Contact.cs" />
+    <Compile Include="SOLID\SingleOfResponsability\Good\ContactRepository.cs" />
+    <Compile Include="TellDontAsk\Bad\Account.cs" />
+    <Compile Include="TellDontAsk\Bad\AccountRepository.cs" />
+    <Compile Include="TellDontAsk\Bad\AccountService.cs" />
+    <Compile Include="TellDontAsk\Good\Account.cs" />
+    <Compile Include="TellDontAsk\Good\AccountRepository.cs" />
+    <Compile Include="TellDontAsk\Good\AccountService.cs" />
+    <Compile Include="TellDontAsk\Good\IAccountRepository.cs" />
+    <Compile Include="TypeDynamic\ClasseDynamic.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
